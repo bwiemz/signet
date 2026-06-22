@@ -11,7 +11,7 @@ jobs:
   rust:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@1.95
         with: { components: rustfmt, clippy }
       - uses: Swatinem/rust-cache@v2
@@ -32,7 +32,7 @@ jobs:
   rust-audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@1.95
       - uses: EmbarkStudios/cargo-deny-action@v2
 
@@ -40,7 +40,7 @@ jobs:
     name: Policy runtime asset matches source
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@1.95
       - uses: Swatinem/rust-cache@v2
       - name: Install wasm32 target
@@ -64,7 +64,7 @@ jobs:
   node:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
@@ -100,7 +100,7 @@ jobs:
       SEALSTACK_QDRANT_URL: http://localhost:6334
       SEALSTACK_GATEWAY_URL: http://localhost:7070
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@1.95
       - uses: Swatinem/rust-cache@v2
       - name: Gateway end-to-end test (in-process, against Postgres)
